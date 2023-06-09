@@ -36,7 +36,7 @@ const SubLayer = ({ sublayer_height, mediaType, id }) => {
   return (
     <div
       ref={containerRef}
-      className="relative flex items-center w-full rounded-lg"
+      className="relative flex items-center w-full rounded-lg "
       style={{ height: sublayer_height }}
       onDrop={
         accepts[mediaType]?.includes(selectedMedia.type) ? handleDrop : null

@@ -32,7 +32,7 @@ const Timeline = ({
         >
           {divisions ? (
             <>
-              <p className="absolute top-0 text-xs">{idx * 10}</p>
+              <p className="absolute top-5 text-xs">{idx * 10}</p>
               {Array.from(Array(n_subdivision + 1), (_, index) => index).map(
                 (_, idx) => (
                   <div

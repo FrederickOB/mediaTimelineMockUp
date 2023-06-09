@@ -34,7 +34,7 @@ const Cursor = ({ onPlay = false }) => {
   return (
     <div
       id="cursor"
-      className=" cursor-pointer absolute z-20 flex ease-linear flex-col items-center justify-center h-full -ml-2 top-[1.6rem]"
+      className=" cursor-pointer absolute z-20 flex ease-linear flex-col items-center justify-center h-[90%] -ml-2 top-[2.55rem]"
       style={
         onPlay
           ? {
