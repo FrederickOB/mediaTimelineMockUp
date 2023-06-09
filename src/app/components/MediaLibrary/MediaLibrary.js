@@ -7,7 +7,7 @@ const MediaLibrary = () => {
   const [media, setMedia] = useState([]);
   //   console.log(media);
   return (
-    <div className="h-full p-4 overflow-y-scroll border rounded-lg glass shadow-xl text-white">
+    <div className="h-full p-4 overflow-y-scroll border dark:border-white border-black rounded-lg glass shadow-xl text-black dark:text-white">
       <h1 className="text-2xl font-bold text-center">Media Library</h1>
       <h1 className="font-bold text-center">{"(drag media to timeline)"}</h1>
       <div className="p-4">
@@ -17,7 +17,7 @@ const MediaLibrary = () => {
                 <MediaPreview key={idx} mediaItem={items} id={idx} />
               ))
             : null}
-          <div className="flex w-full h-full py-2 mb-10 text-sm font-medium leading-4 text-white/40 ite hover:text-white">
+          <div className="flex w-full h-full py-2 mb-10 text-sm font-medium leading-4 text-black dark:text-white/40 ite hover:text-black dark:text-white">
             <label
               htmlFor="media"
               className="flex flex-col items-center justify-center space-y-2 cursor-pointer"

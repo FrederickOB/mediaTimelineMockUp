@@ -14,9 +14,9 @@ export const colors = {
 };
 
 export const icons = {
-  audio: <MicrophoneIcon className="w-6 h-6 text-white/40" />,
-  video: <VideoCameraIcon className="w-6 h-6 text-white/40" />,
-  image: <PhotoIcon className="w-6 h-6 text-white/40" />,
+  audio: <MicrophoneIcon className="w-6 h-6 text-black dark:text-white/40" />,
+  video: <VideoCameraIcon className="w-6 h-6 text-black dark:text-white/40" />,
+  image: <PhotoIcon className="w-6 h-6 text-black dark:text-white/40" />,
 };
 
 const MediaPreview = ({ mediaItem, id }) => {

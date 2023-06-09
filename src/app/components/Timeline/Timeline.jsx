@@ -19,7 +19,7 @@ const Timeline = ({
   const subdivision_width = indicators_width / (n_subdivision + 1);
   return (
     <div
-      className={` min-w-fit w-full border rounded  ${
+      className={` min-w-fit w-full border dark:border-white border-black rounded  ${
         divisions ? "divide-white" : "divide-white/5"
       } divide-x flex ${height}`}
       ref={containerRef}

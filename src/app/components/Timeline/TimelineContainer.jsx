@@ -42,7 +42,7 @@ const TimelineContainer = () => {
       <div>
         <PlayCircleIcon
           className={`w-10 h-10 ${
-            play ? "text-red-400" : "text-white"
+            play ? "text-red-400" : "text-black dark:text-white"
           } cursor-pointer`}
           onClick={() => setPlay((prev) => !prev)}
         />
@@ -50,7 +50,7 @@ const TimelineContainer = () => {
       <div
         ref={containerRef}
         onDragOver={handleDragOver}
-        className="relative glass shadow-xl rounded text-white border  w-full h-full max-w-full pt-8 space-y-2 overflow-x-scroll"
+        className="relative glass shadow-xl rounded text-black dark:text-white border dark:border-white border-black  w-full h-full max-w-full pt-8 space-y-2 overflow-x-scroll"
       >
         <Cursor onPlay={play} />
         <Timeline height="min-h-[1rem]" divisions={true} />

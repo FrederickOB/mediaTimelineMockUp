@@ -28,7 +28,7 @@ export default function Home() {
       <main className="flex flex-col items-center justify-between w-full p-12 space-y-8 lg:min-h-screen">
         <div className="grid w-full h-[55vh] grid-cols-1 gap-8 lg:grid-cols-2">
           <MediaLibrary />
-          <div className="flex flex-col p-4 text-white items-center justify-between h-full border glass shadow-xl">
+          <div className="flex flex-col p-4 text-black dark:text-white items-center justify-between h-full border dark:border-white border-black glass shadow-xl">
             <h1 className="text-2xl font-bold text-center">Preview</h1>
             <div className=" h-[90%] flex items-center justify-center">
               <p>coming soon.. </p>
