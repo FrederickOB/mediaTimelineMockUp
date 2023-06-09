@@ -9,6 +9,9 @@ const MediaLibrary = () => {
   return (
     <div className="h-full p-4 overflow-y-scroll border rounded-lg">
       <h1 className="text-2xl font-bold text-center">Media Library</h1>
+      <h1 className="text-lg font-bold text-center">
+        {"(drag media to timeline)"}
+      </h1>
       <div className="p-4">
         <div className="relative grid grid-cols-2 gap-10 md:grid-cols-3">
           {media && media.length > 0

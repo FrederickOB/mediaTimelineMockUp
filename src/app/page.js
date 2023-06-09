@@ -2,7 +2,6 @@
 import MediaLibrary from "./components/MediaLibrary/MediaLibrary";
 import { createContext, useMemo, useState } from "react";
 import TimelineContainer from "./components/Timeline/TimelineContainer";
-import ContainerComponent from "./components/example/Examples";
 
 export const MediaContext = createContext({
   selectedMedia: [],
@@ -36,7 +35,6 @@ export default function Home() {
           </div>
         </div>
         <TimelineContainer />
-        <ContainerComponent />
 
         {/* <MediaItem /> */}
       </main>{" "}
