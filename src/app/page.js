@@ -37,7 +37,6 @@ export default function Home() {
         </div>
         <TimelineContainer />
 
-        {/* <MediaItem /> */}
       </main>{" "}
     </MediaContext.Provider>
   );

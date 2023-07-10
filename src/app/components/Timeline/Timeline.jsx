@@ -7,6 +7,7 @@ const Timeline = ({
   indicators_width = 100,
   height = "min-h-[6rem]",
   divisions = false,
+  secondsList,
 }) => {
   const containerRef = useRef(null);
   const { timelineWidth, setTimelineWidth } = useContext(MediaContext);
@@ -32,7 +33,14 @@ const Timeline = ({
         >
           {divisions ? (
             <>
-              <p className="absolute top-5 text-xs">{idx * 10}</p>
+              {secondsList && secondsList.length > 0 ? (
+                <p
+                  style={{ width: indicators_width }}
+                  className="absolute text-xs text-center top-5"
+                >
+                  {secondsList[idx]}
+                </p>
+              ) : null}
               {Array.from(Array(n_subdivision + 1), (_, index) => index).map(
                 (_, idx) => (
                   <div

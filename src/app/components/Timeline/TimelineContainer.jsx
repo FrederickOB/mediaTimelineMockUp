@@ -5,6 +5,7 @@ import { PlayCircleIcon } from "@heroicons/react/24/outline";
 import Cursor from "../Cursor/Cursor";
 import Timeline from "./Timeline";
 import MediaLayer from "../MediaLayer/MediaLayer";
+import TimelineRuler from "./TimelineRuler";
 
 const TimelineContainer = () => {
   const [play, setPlay] = useState(false);
@@ -50,10 +51,11 @@ const TimelineContainer = () => {
       <div
         ref={containerRef}
         onDragOver={handleDragOver}
-        className="relative glass shadow-xl rounded text-black dark:text-white border dark:border-white border-black  w-full h-full max-w-full pt-8 space-y-2 overflow-x-scroll"
+        className="relative w-full h-full max-w-full pt-8 space-y-2 overflow-x-scroll text-black border border-black rounded shadow-xl glass dark:text-white dark:border-white"
       >
         <Cursor onPlay={play} />
-        <Timeline height="min-h-[1rem]" divisions={true} />
+        <TimelineRuler />
+        {/* <Timeline height="min-h-[1rem]" divisions={true} /> */}
         <MediaLayer />
       </div>
     </>

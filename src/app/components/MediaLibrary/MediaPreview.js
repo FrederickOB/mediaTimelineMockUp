@@ -1,11 +1,12 @@
 "use client";
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import {
   PhotoIcon,
   VideoCameraIcon,
   MicrophoneIcon,
 } from "@heroicons/react/24/solid";
 import { MediaContext } from "@/app/page";
+import { spinner } from "../Spinner/spinner";
 
 export const colors = {
   audio: "border-orange-600 bg-orange-600/40",
@@ -23,25 +24,16 @@ const MediaPreview = ({ mediaItem, id }) => {
   const { setSelectedMedia } = useContext(MediaContext);
   const mediaRef = useRef(null);
   const [duration, setDuration] = useState(0);
-
+  const [loading, setLoading] = useState(false);
   const getMediaType = () => {
     return mediaItem.type.split("/")[0]; // Get the media type from the MIME type
   };
 
   const handleDrag = (event, mediaItem) => {
-    var reader = new FileReader();
-    reader.onload = (e) => {
-      var aud = new Audio(e.target.result);
-      aud.onloadedmetadata = (ev) => {
-        setDuration(ev.target.duration);
-      };
-    };
-    reader.readAsDataURL(mediaItem);
-
     const data = {
       name: mediaItem.name,
       type: getMediaType(),
-      duration: duration,
+      duration: duration < 100 ? 100 : duration,
     };
     // console.log(duration);
     event.dataTransfer.setData("media", JSON.stringify(data));
@@ -50,6 +42,25 @@ const MediaPreview = ({ mediaItem, id }) => {
     setSelectedMedia(data);
     // event.preventDefault();
   };
+
+  useEffect(() => {
+    var reader = new FileReader();
+    reader.onload = (e) => {
+      setLoading(true);
+      var aud = new Audio(e.target.result);
+      aud.onloadedmetadata = (ev) => {
+        setDuration(
+          ev.target.duration > 100 ? Math.round(ev.target.duration) : 100
+        );
+        setLoading(false);
+      };
+    };
+    reader.readAsDataURL(mediaItem);
+  }, [mediaItem]);
+
+  if (loading) {
+    spinner("", "text-white", "w-10 h-10");
+  }
 
   return (
     <div

@@ -5,9 +5,8 @@ import { PlusCircleIcon } from "@heroicons/react/24/outline";
 
 const MediaLibrary = () => {
   const [media, setMedia] = useState([]);
-  //   console.log(media);
   return (
-    <div className="h-full p-4 overflow-y-scroll border dark:border-white border-black rounded-lg glass shadow-xl text-black dark:text-white">
+    <div className="h-full p-4 overflow-y-scroll text-black border border-black rounded-lg shadow-xl dark:border-white glass dark:text-white">
       <h1 className="text-2xl font-bold text-center">Media Library</h1>
       <h1 className="font-bold text-center">{"(drag media to timeline)"}</h1>
       <div className="p-4">
@@ -24,20 +23,15 @@ const MediaLibrary = () => {
             >
               <PlusCircleIcon className="w-12 h-12 " />
               <span>add media</span>
-              {/* <span>{uploadedPicUrl ? "change image" : "choose image"}</span> */}
               <input
                 id="media"
                 name="media"
                 type="file"
                 accept="image/*,audio/*,video/*"
                 className="sr-only"
-                // value={values.profile_picture}
                 onChange={(event) => {
                   const files = Array.from(event.currentTarget.files);
                   setMedia((prev) => [...prev, ...files]);
-                  //   setUploadedPicUrl(
-                  //     URL.createObjectURL(event.currentTarget.files[0])
-                  //   );
                 }}
               />
             </label>
